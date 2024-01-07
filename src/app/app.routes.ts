@@ -40,4 +40,7 @@ export const routes: Routes = [{
 }, {
     path: 'transparency',
     component: TransparencyComponent
+},{
+    path: '**',
+    redirectTo: ''
 }];
