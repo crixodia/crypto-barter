@@ -1,0 +1,33 @@
+<div class="flex-wrap flex justify-center">
+    <div *ngFor="let product of products; let i = index"
+        class="card card-compact w-full sm:w-96 bg-base-100 shadow-xl m-3">
+        <figure>
+            <img loading="lazy" class="object-cover h-48 w-full rounded-b-none" [ngClass]="loadingImages[i]?'skeleton':''"
+                src="{{baseUrl}}/product_image/{{product.id}}" alt="{{ product.description }}"
+                (load)="imageLoaded(i)" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title">{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <div class="card-actions justify-end">
+                <button class="btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-heart-fill text-primary" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                    </svg>
+                </button>
+                <button class="btn" (click)="productDetail(product)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path
+                            d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                        <path fill-rule="evenodd"
+                            d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                    </svg>
+                    Trade
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
