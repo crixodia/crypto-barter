@@ -7,7 +7,7 @@ import { Product } from '../interfaces/product';
   providedIn: 'root'
 })
 export class ProductsService {
-  public baseUrl = 'http://localhost:8000/api/v1';
+  public baseUrl = 'http://cryptobarter.eastus2.cloudapp.azure.com:8000/api/v1';
 
   constructor(private http: HttpClient) { }
 
