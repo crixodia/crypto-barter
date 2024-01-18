@@ -26,4 +26,8 @@ export class DoneComponent {
       content: 'Done Crypto Barter page description.'
     });
   }
+
+  goToProducts(): void {
+    window.location.href = '/products';
+  }
 }

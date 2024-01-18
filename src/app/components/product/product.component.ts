@@ -104,6 +104,6 @@ export class ProductComponent implements OnInit {
   }
 
   done(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/done']);
   }
 }
